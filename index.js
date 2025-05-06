@@ -15,7 +15,7 @@ app.get('/ping', (req, res) => {
 cron.schedule('*/5 * * * *', async () => {
   setTimeout(async () => {
     try {
-      const res = await axios.get(BACKEND_A_URL);
+      const res = await axios.get("https://botd-e34u.onrender.com/ping")
       console.log('✅ Backend B envió ping a Backend A:', res.data);
     } catch (err) {
       console.error('❌ Error en Backend B al pingear A:', err.message);
