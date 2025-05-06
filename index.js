@@ -15,7 +15,7 @@ app.get('/ping', (req, res) => {
 cron.schedule('*/5 * * * *', async () => {
   setTimeout(async () => {
     try {
-      const res = await axios.get("https://botd-e34u.onrender.com/ping")
+      const res = await axios.get("https://botd-e34u.onrender.com/bot/ping")
       console.log('✅ Backend B envió ping a Backend A:', res.data);
     } catch (err) {
       console.error('❌ Error en Backend B al pingear A:', err.message);
@@ -23,6 +23,6 @@ cron.schedule('*/5 * * * *', async () => {
   }, 10000); // espera 10 segundos antes de hacer el ping
 });
 
-app.listen(process.env.PORTT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`🚀 Backend B corriendo en ${process.env.PORT}`);
 });
