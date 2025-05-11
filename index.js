@@ -5,6 +5,7 @@ require("dotenv").config();
 const app = express();
 
 app.get("/ping", (req, res) => {
+  res.end();
   setTimeout(async () => {
     await axios.get("https://botd-e34u.onrender.com/ping");
   }, 5 * 60 * 1000);
