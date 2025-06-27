@@ -8,7 +8,7 @@ app.get("/ping", (req, res) => {
   setTimeout(async () => {
     await axios.get("https://botd-e34u.onrender.com/ping");
   }, 5 * 60 * 1000);
-  res.sed('pong');
+  res.send('pong');
 });
 
 app.listen(process.env.PORT, () => {
